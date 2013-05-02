@@ -3,5 +3,5 @@ class Expense < ActiveRecord::Base
   
   validate :amount, presence: true
   validate :goods_service, presence: true, length: { maximum: 50 }
-  validate :note, presence: true length: { maximum: 100 }
+  validate :note, presence: true, length: { maximum: 100 }
 end
