@@ -2,4 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.container{
+  padding: 5px;
+}
+
+table {
+  
+  tr td {
+  padding: 5px;
+  vertical-align: top;
+  }
+  
+  th {
+    padding: 5px;
+    background: lightGreen;
+  }
+	
+}
+
+.list_line_even {
+  background: #e0f8f8;
+}
+
+.list_line_odd {
+  background: #f8b0f8;
+}
 
