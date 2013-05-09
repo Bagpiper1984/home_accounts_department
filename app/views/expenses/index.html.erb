@@ -1,29 +1,51 @@
-<h1>Listing expenses</h1>
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
 
 <div class="container">
-  <table>
-    <tr>
-      <th>Amount</th>
-      <th>Goods service</th>
-      <th>Note</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-
-	<% @expenses.each do |expense| %>
-	  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+  <fieldset>
+    <legend>Listing expenses</legend>
+    
+	  <table>
+		<tr>
+		  <th>Date</th>
+		  <th>Amount</th>
+		  <th>Goods service</th>
+		  <th>Note</th>
+		  <th></th>
+		  <th></th>
+		  <th></th>
+		</tr>
 		
-		<td><%= expense.amount %></td>
-		<td><%= expense.goods_service %></td>
-		<td><%= expense.note %></td>
-		<td><%= link_to 'Show', expense %></td>
-		<td><%= link_to 'Edit', edit_expense_path(expense) %></td>
-		<td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-	  </tr>
-	<% end %>
-	</table>
-</div>
+		<div id="date">  
+		  <%= select_date Date.today, :prefix => :date %>
+		</div>  
+		
+		<%= button_to "Select Date", expenses_path, method: :get %>
+		<%= params[:date] != nil ? params[:date][:year] : " " %>
+		
+		<% @expenses.each do |expense| %>
+		  <div class="entry">
+			  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+				<td><%= expense.created_at.to_s(:my_date_format) %></td>
+				<td id="amount"><%= number_to_currency(expense.amount) %></td>
+				<td><%= expense.goods_service %></td>
+				<td><%= expense.note %></td>
+				<td><%= link_to 'Show', expense %></td>
+				<td><%= link_to 'Edit', edit_expense_path(expense) %></td>
+				<td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			  </tr>
+		  </div>	  
+		<% end %>
+		</table>
+	</div>
+
+	<div id="total_expenses_sum">
+	  <% total_expenses_sum = 0 %>
+	  <% @expenses.each { |expense| total_expenses_sum += expense.amount } %>
+	  Total Expenses Sum: <%= number_to_currency(total_expenses_sum) %>
+	</div>
+</fieldset>
 
 <br />
 

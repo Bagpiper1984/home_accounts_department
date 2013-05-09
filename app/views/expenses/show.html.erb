@@ -1,20 +1,28 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Amount:</b>
-  <%= @expense.amount %>
+<p id="notice">
+  <%= notice %>
 </p>
 
-<p>
-  <b>Goods service:</b>
-  <%= @expense.goods_service %>
-</p>
+<fieldset>
+	<p>
+	  <b>Date:</b>
+	  <%= @expense.created_at.to_s(:my_date_format) %>
+	</p>
+	
+	<p>
+	  <b>Amount:</b>
+	  <%= @expense.amount %>
+	</p>
 
-<p>
-  <b>Note:</b>
-  <%= @expense.note %>
-</p>
+	<p>
+	  <b>Goods service:</b>
+	  <%= @expense.goods_service %>
+	</p>
 
+	<p>
+	  <b>Note:</b>
+	  <%= @expense.note %>
+	</p>
+</fieldset>
 
 <%= link_to 'Edit', edit_expense_path(@expense) %> |
 <%= link_to 'Back', expenses_path %>
