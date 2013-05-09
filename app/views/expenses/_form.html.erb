@@ -1,3 +1,5 @@
+<div class="container">
+
 <%= form_for(@expense) do |f| %>
   <% if @expense.errors.any? %>
     <div id="error_explanation">
@@ -17,7 +19,7 @@
   </div> 
   <div class="field">
     <%= f.label :amount %><br />
-    <%= f.text_field :amount %>
+    <%= number_to_currency(f.text_field :amount) %>
   </div>
   <div class="field">
     <%= f.label :goods_service %><br />
@@ -31,3 +33,5 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+</div>

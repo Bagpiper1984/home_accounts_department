@@ -32,7 +32,8 @@ table {
   
   th {
     padding: 5px;
-    background: lightGreen;
+    color: #dfd;
+	background: #141;
 	vertical-align: top;
   }
 	
@@ -43,14 +44,16 @@ table {
 }
 
 .list_line_odd {
-  background: #f8b0f8;
+  //background: lightGreen;
 }
 
 a {
-  padding: 5px;
+  color: #141;
+  padding: 0.2em 1em;
   
   &:hover {
     color: #fff;
+	background: #141;
   }
 }
 
@@ -71,11 +74,41 @@ h1 {
 }
 
 #total_expenses_sum {
+  //color: #141;
   margin: 20px;
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: bold;
+  font-family: sans-serif;
 }
 
 #date {
   margin: 20px 20px 20px 0px;
+}
+
+fieldset {
+  background: #efe;
+  
+  legend {
+    color: #dfd;
+	background: #141;
+	font-family: sans-serif;
+	padding: 0.2em 1em;
+  }
+}
+
+form {
+  label {
+	width: 10em;
+	float: left;
+	text-align: right;
+	padding-top: 1.8em;
+	margin-right: 0.5em;
+	display: block;
+  }
+  input {
+	margin-left: 0.5em;
+  }
+  .submit {
+	margin-left: 4em;
+  }
 }

@@ -18,11 +18,11 @@
 		</tr>
 		
 		<div id="date">  
-		  <%= select_date Date.today, :prefix => :date %>
+		  <!--<%= select_date Date.today, :prefix => :date %>-->
 		</div>  
 		
-		<%= button_to "Select Date", expenses_path, method: :get %>
-		<%= params[:date] != nil ? params[:date][:year] : " " %>
+		<!--<%= button_to "Select Date", expenses_path, method: :get %>-->
+		<!--<%= params[:date] != nil ? params[:date][:year] : " " %>-->
 		
 		<% @expenses.each do |expense| %>
 		  <div class="entry">
@@ -38,7 +38,6 @@
 		  </div>	  
 		<% end %>
 		</table>
-	</div>
 
 	<div id="total_expenses_sum">
 	  <% total_expenses_sum = 0 %>
