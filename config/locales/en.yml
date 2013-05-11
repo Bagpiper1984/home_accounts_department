@@ -18,6 +18,9 @@ en:
   russian: "Russian"
   english: "English"
   
+  create: "Expense was successfully created." 
+  update: "Expense was successfully updated." 
+  
   number:
     currency:
       format:
