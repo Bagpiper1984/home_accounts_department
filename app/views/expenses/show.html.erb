@@ -4,27 +4,27 @@
 
 <fieldset>
 	<p>
-	  <b>Date:</b>
+	  <b><%=t :date %></b>
 	  <%= @expense.created_at.to_s(:my_date_format) %>
 	</p>
 	
 	<p>
-	  <b>Amount:</b>
+	  <b><%=t :amount %></b>
 	  <%= number_to_currency(@expense.amount) %>
 	</p>
 
 	<p>
-	  <b>Goods service:</b>
+	  <b><%=t :goods_service %></b>
 	  <%= @expense.goods_service %>
 	</p>
 
 	<p>
-	  <b>Note:</b>
+	  <b><%=t :note %></b>
 	  <%= @expense.note %>
 	</p>
 </fieldset>
 
 <div class="link">
-  <%= link_to 'Edit', edit_expense_path(@expense) %> |
-  <%= link_to 'Back', expenses_path %>
+  <%= link_to t(:edit), edit_expense_path(@expense) %> |
+  <%= link_to t(:back), expenses_path %>
 </div>

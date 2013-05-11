@@ -14,19 +14,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :created_at %><br />
+    <%= f.label t(:date) %><br />
     <%= f.text_field :created_at %>
   </div> 
   <div class="field">
-    <%= f.label :amount %><br />
+    <%= f.label t(:amount) %><br />
     <%= number_to_currency(f.text_field :amount) %>
   </div>
   <div class="field">
-    <%= f.label :goods_service %><br />
+    <%= f.label t(:goods_service) %><br />
     <%= f.text_field :goods_service %>
   </div>
   <div class="field">
-    <%= f.label :note %><br />
+    <%= f.label t(:note) %><br />
     <%= f.text_field :note %>
   </div>
   <div class="actions">

@@ -10,8 +10,19 @@ en:
   show: "Show"
   edit: "Edit"
   destroy: "Destroy"
+  back: "Back"
   are_you_sure: "Are you sure?"
   total_expenses_sum: "Total Expenses Sum"
   new_expense: "New Expense"
+  editing_expense: "Editing expense"
   russian: "Russian"
   english: "English"
+  
+  number:
+    currency:
+      format:
+        unit: "RUR"
+        precision: 2
+        separator: "."
+        delimiter: ","
+        format: "%n %u"

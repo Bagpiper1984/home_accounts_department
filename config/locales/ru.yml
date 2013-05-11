@@ -10,8 +10,19 @@ ru:
   show: "Показать"
   edit: "Редактировать"
   destroy: "Удалить"
+  back: "Назад"
   are_you_sure: "Вы уверены?"
   total_expenses_sum: "Общая сумма затрат"
   new_expense: "Новые Затраты"
+  editing_expense: "Редактировать Затраты"
   russian: "Русский"
   english: "Английский"
+  
+  number:
+    currency:
+      format:
+        unit: "руб."
+        precision: 2
+        separator: "."
+        delimiter: ","
+        format: "%n %u"
