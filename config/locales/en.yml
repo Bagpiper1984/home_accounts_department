@@ -2,4 +2,16 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  listing_expenses: "Listing expenses"
+  date: "Date"
+  amount: "Amount"
+  goods_service: "Goods service"
+  note: "Note"
+  show: "Show"
+  edit: "Edit"
+  destroy: "Destroy"
+  are_you_sure: "Are you sure?"
+  total_expenses_sum: "Total Expenses Sum"
+  new_expense: "New Expense"
+  russian: "Russian"
+  english: "English"

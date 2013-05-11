@@ -4,25 +4,18 @@
 
 <div class="container">
   <fieldset>
-    <legend>Listing expenses</legend>
+    <legend><%=t :listing_expenses %></legend>
     
 	  <table>
 		<tr>
-		  <th>Date</th>
-		  <th>Amount</th>
-		  <th>Goods service</th>
-		  <th>Note</th>
+		  <th><%=t :date %></th>
+		  <th><%=t :amount %></th>
+		  <th><%=t :goods_service %></th>
+		  <th><%=t :note %></th>
 		  <th></th>
 		  <th></th>
 		  <th></th>
 		</tr>
-		
-		<div id="date">  
-		  <!--<%= select_date Date.today, :prefix => :date %>-->
-		</div>  
-		
-		<!--<%= button_to "Select Date", expenses_path, method: :get %>-->
-		<!--<%= params[:date] != nil ? params[:date][:year] : " " %>-->
 		
 		<% @expenses.each do |expense| %>
 		  <div class="entry">
@@ -31,9 +24,9 @@
 				<td id="amount"><%= number_to_currency(expense.amount) %></td>
 				<td><%= expense.goods_service %></td>
 				<td><%= expense.note %></td>
-				<td><%= link_to 'Show', expense %></td>
-				<td><%= link_to 'Edit', edit_expense_path(expense) %></td>
-				<td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				<td><%= link_to t(:show), expense %></td>
+				<td><%= link_to t(:edit), edit_expense_path(expense) %></td>
+				<td><%= link_to t(:destroy), expense, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
 			  </tr>
 		  </div>	  
 		<% end %>
@@ -42,12 +35,12 @@
 	<div id="total_expenses_sum">
 	  <% total_expenses_sum = 0 %>
 	  <% @expenses.each { |expense| total_expenses_sum += expense.amount } %>
-	  Total Expenses Sum: <%= number_to_currency(total_expenses_sum) %>
+	  <%= t(:total_expenses_sum) + ": " + number_to_currency(total_expenses_sum) %>
 	</div>
 </fieldset>
 
 <br />
 
 <div class="link">
-  <%= link_to 'New Expense', new_expense_path %>
-</div>  
+  <%= link_to t(:new_expense), new_expense_path %>
+</div>

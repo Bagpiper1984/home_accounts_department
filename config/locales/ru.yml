@@ -1,0 +1,17 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+ru:
+  listing_expenses: "Список затрат"
+  date: "Дата"
+  amount: "Стоимость"
+  goods_service: "Товар услуга"
+  note: "Примечание"
+  show: "Показать"
+  edit: "Редактировать"
+  destroy: "Удалить"
+  are_you_sure: "Вы уверены?"
+  total_expenses_sum: "Общая сумма затрат"
+  new_expense: "Новые Затраты"
+  russian: "Русский"
+  english: "Английский"
