@@ -1,10 +1,10 @@
-<p id="notice">
-  <%= notice %>
-</p>
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
 
 <fieldset>
 	<p>
-	  <b><%=t :date %></b>
+	  <b><%=t :my_date %></b>
 	  <%= @expense.created_at.to_s(:my_date_format) %>
 	</p>
 	

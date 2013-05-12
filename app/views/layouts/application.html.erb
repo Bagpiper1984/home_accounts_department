@@ -9,12 +9,14 @@
 </head>
 <body class='<%= controller.controller_name %>'>
 
+<%= render 'layouts/header' %>
+
+<br />
+
 <%= yield %>
 
 <br />
-<footer id="footer">
-  <%= render 'layouts/footer' %> 
-</footer>
+<%= render 'layouts/footer' %> 
   
 </body>
 </html>

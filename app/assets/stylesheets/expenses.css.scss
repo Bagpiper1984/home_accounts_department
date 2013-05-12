@@ -70,7 +70,7 @@ h1 {
 }
 
 .link {
-  display: inline;
+  margin-top: 1.2em;
 }
 
 #total_expenses_sum {
@@ -114,5 +114,14 @@ form {
 }
 
 #footer {
+  padding-top: 0.5em;
+}
+
+#header {
   padding-top: 1.5em;
+  //padding-left: 0.1em;
+}
+
+.select_date {
+  margin: 1em;
 }

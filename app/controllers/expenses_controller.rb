@@ -1,8 +1,18 @@
-class ExpensesController < ApplicationController
+class ExpensesController < ApplicationController  
+  
   # GET /expenses
   # GET /expenses.json
   def index
-    @expenses = Expense.all
+    if params[:start_date] != nil
+	  params[:expense][:start_date]=Date.new(params[:expense][:"start_date(1i)"].to_i, params[:expense][:"start_date(2i)"].to_i,params[:expense][:"start_date(3i)"].to_i)
+	    params[:expense].delete(:"start_date(1i)")
+		params[:expense].delete(:"start_date(2i)")
+		params[:expense].delete(:"start_date(3i)")
+	
+	end
+	#@expenses = Expense.(:created_at => (params[:start_date].to_date)..(params[:end_date].to_date))
+
+	@expenses = Expense.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -40,7 +50,14 @@ class ExpensesController < ApplicationController
   # POST /expenses
   # POST /expenses.json
   def create
-    @expense = Expense.new(params[:expense])
+    if params[:start_date] != nil
+	  params[:expense][:start_date]=Date.new(params[:expense][:"start_date(1i)"].to_i, params[:expense][:"start_date(2i)"].to_i,params[:expense][:"start_date(3i)"].to_i)
+	    params[:expense].delete(:"start_date(1i)")
+		params[:expense].delete(:"start_date(2i)")
+		params[:expense].delete(:"start_date(3i)")
+	end
+	
+	@expense = Expense.new(params[:expense])
 
     respond_to do |format|
       if @expense.save

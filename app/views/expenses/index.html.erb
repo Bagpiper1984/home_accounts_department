@@ -8,7 +8,7 @@
     
 	  <table>
 		<tr>
-		  <th><%=t :date %></th>
+		  <th><%=t :my_date %></th>
 		  <th><%=t :amount %></th>
 		  <th><%=t :goods_service %></th>
 		  <th><%=t :note %></th>
@@ -31,16 +31,32 @@
 		  </div>	  
 		<% end %>
 		</table>
-
+		
+		<div class="select_date">
+			<%= form_tag(controller: :expenses, action: :index, method: :post) do %>	
+				<%= radio_button_tag(:expenses, "All Expenses") %>
+				<%= label_tag(:age_child, t(:display_all_expenses)) %><br />
+				<%= radio_button_tag(:expenses, "Between") %>
+				<%= label_tag(:age_child, t(:display_expenses_in_between)) %><br /><br />
+				
+				<br />
+				
+				<%=t(:start_date) + ": " %><%= date_select("expense", "start_date", :order => [:day,:month,:year]) %>
+				<%=t(:end_date) + ": " %><%= date_select("expense", "end_date", :order => [:day,:month,:year]) %>
+				<br />
+				<%= submit_tag("Show") %>
+			<% end %>	
+		</div>
+		
 	<div id="total_expenses_sum">
 	  <% total_expenses_sum = 0 %>
-	  <% @expenses.each { |expense| total_expenses_sum += expense.amount } %>
+	  <% #@expenses.each { |expense| total_expenses_sum += expense.amount } %>
 	  <%= t(:total_expenses_sum) + ": " + number_to_currency(total_expenses_sum) %>
 	</div>
+
+  <div class="link">
+    <%= link_to t(:new_expense), new_expense_path %>
+  </div>
+
 </fieldset>
 
-<br />
-
-<div class="link">
-  <%= link_to t(:new_expense), new_expense_path %>
-</div>

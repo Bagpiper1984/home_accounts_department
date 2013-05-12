@@ -2,8 +2,16 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 ru:
+  listing_income_and_expenses: "Список доходов и затрат"
   listing_expenses: "Список затрат"
-  date: "Дата"
+  listing_income: "Список доходов"
+  
+  menu: "Меню"
+  
+  start_date: "Начальная дата"
+  end_date: "Конечная дата"
+  
+  my_date: "Дата"
   amount: "Стоимость"
   goods_service: "Товар услуга"
   note: "Примечание"
@@ -20,6 +28,16 @@ ru:
   
   create: "Новая запись с затратами была успешно добавлена." 
   update: "Текущая запись с затратами была успешно обновлена." 
+  
+  date:   
+    formats: 
+      default: ""
+      long: ""
+      short: ""
+    order:
+      - :year
+      - :month
+      - :day 
   
   number:
     currency:

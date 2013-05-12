@@ -2,8 +2,16 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  listing_income_and_expenses: "Listing Income And Expenses"
   listing_expenses: "Listing expenses"
-  date: "Date"
+  listing_income: "Listing Income"
+  
+  menu: "Menu"
+  
+  start_date: "Start date"
+  end_date: "End date"
+  
+  my_date: "Date"
   amount: "Amount"
   goods_service: "Goods service"
   note: "Note"
